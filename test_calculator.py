@@ -22,7 +22,13 @@ def test_old_numerals(first, second, expected):
     ('II', 'II', 'IV'),
     ('VIII', 'I', 'IX'),
     ('XXVIII', 'I', 'XXIX'),
+])
+def test_backwardsey_numerals_as_output(first, second, expected):
+    assert add(first, second) == expected
+
+
+@pytest.mark.parametrize('first,second,expected', [
     # ('V', 'IV', 'IX'),
 ])
-def test_backwardsey_numerals(first, second, expected):
+def test_backwardsey_numerals_as_inputs(first, second, expected):
     assert add(first, second) == expected
