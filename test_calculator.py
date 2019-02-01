@@ -30,3 +30,7 @@ def test_one_to_five():
     result = add('V', 'I')
     assert result == 'VI'
 
+
+def test_five_to_five():
+    result = add('V', 'V')
+    assert result == 'X'
