@@ -4,4 +4,4 @@ def add(first, second):
     if len(result) > 3:
         return "V"
 
-    return result
+    return ''.join(reversed(sorted(result)))
