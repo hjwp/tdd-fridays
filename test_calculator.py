@@ -19,3 +19,9 @@ def test_two_to_one_no_class():
 def test_two_to_three_no_class():
     result = add('II', 'III')
     assert result == 'V'
+
+
+def test_five_to_one_no_class():
+    result = add('I', 'V')
+    assert result == 'VI'
+
