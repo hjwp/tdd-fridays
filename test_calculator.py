@@ -21,6 +21,7 @@ def test_old_numerals(first, second, expected):
 @pytest.mark.parametrize('first,second,expected', [
     ('II', 'II', 'IV'),
     ('VIII', 'I', 'IX'),
+    ('XXVIII', 'I', 'XXIX'),
     # ('V', 'IV', 'IX'),
 ])
 def test_backwardsey_numerals(first, second, expected):
