@@ -1,7 +1,5 @@
 def add(first, second):
-    result = f"{first}{second}"
+    smooshed = ''.join(reversed(sorted(f"{first}{second}")))
+    result = smooshed.replace('IIIII', 'V')
 
-    if len(result) > 3:
-        return "V"
-
-    return ''.join(reversed(sorted(result)))
+    return result
