@@ -28,7 +28,7 @@ def test_backwardsey_numerals_as_output(first, second, expected):
 
 
 @pytest.mark.parametrize('first,second,expected', [
-    # ('V', 'IV', 'IX'),
+    ('V', 'IV', 'IX'),
 ])
 def test_backwardsey_numerals_as_inputs(first, second, expected):
     assert add(first, second) == expected
