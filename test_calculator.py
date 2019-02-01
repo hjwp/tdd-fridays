@@ -20,6 +20,8 @@ def test_old_numerals(first, second, expected):
 
 @pytest.mark.parametrize('first,second,expected', [
     ('II', 'II', 'IV'),
+    ('VIII', 'I', 'IX'),
+    # ('V', 'IV', 'IX'),
 ])
 def test_backwardsey_numerals(first, second, expected):
     assert add(first, second) == expected

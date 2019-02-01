@@ -5,5 +5,5 @@ def add(first, second):
     smooshed = first + second
     ordered = ''.join(reversed(sorted(smooshed, key=roman_number_order)))
     old_style_result = ordered.replace('IIIII', 'V').replace('VV', 'X').replace("XXXXX", "L")
-    new_style_result = old_style_result.replace('IIII', 'IV')
+    new_style_result = old_style_result.replace('VIIII', 'IX').replace('IIII', 'IV')
     return new_style_result
