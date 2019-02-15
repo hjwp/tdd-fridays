@@ -25,3 +25,6 @@ def test_toggle_first_light():
     command = "toggle 0,0 through 0,0"
     grid.act(command)
     assert grid.lit_count == 0
+    command = "toggle 0,0 through 0,0"
+    grid.act(command)
+    assert grid.lit_count == 1
