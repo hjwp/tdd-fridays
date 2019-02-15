@@ -36,3 +36,8 @@ def test_turn_on_two_lights_in_a_range():
     grid = Grid()
     grid.act("turn on 0,0 through 0,1")
     assert grid.lit_count == 2
+
+def test_turn_on_line_longer_than_2():
+    grid = Grid()
+    grid.act("turn on 0,0 through 0,3")
+    assert grid.lit_count == 4

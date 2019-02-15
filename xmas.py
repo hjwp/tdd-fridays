@@ -1,16 +1,22 @@
 import re
 
 class Grid:
-    lit = set()
+
+    def __init__(self):
+        self.lit = set()
 
     @property
     def lit_count(self):
         return len(self.lit)
 
     def act(self, command):
-        pos1, pos2 = re.search(r'.+(\d,\d) through (\d,\d)', command).groups()
+        corner1, corner2 = re.search(r'.+(\d,\d) through (\d,\d)', command).groups()
 
-        for pos in {pos1, pos2}:
+        positions = [
+            f'0,{i}' for i in range(int(corner1[-1]), int(corner2[-1]) + 1)
+        ]
+        print(positions)
+        for pos in positions:
             if 'toggle' in command:
                 if pos in self.lit:
                     self.lit.remove(pos)
