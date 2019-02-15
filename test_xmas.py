@@ -47,3 +47,13 @@ def test_turn_two_lights_on_then_off():
     assert grid.lit_count == 1
     grid.act("turn off 0,1 through 0,1")
     assert grid.lit_count == 0
+
+
+def test_turn_off_same_light_twice():
+    grid = Grid()
+    grid.act("turn on 0,0 through 0,0")
+    grid.act("turn on 0,1 through 0,1")
+    grid.act("turn off 0,0 through 0,0")
+    assert grid.lit_count == 1
+    grid.act("turn off 0,0 through 0,0")
+    assert grid.lit_count == 1
