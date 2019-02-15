@@ -1,16 +1,26 @@
+import re
+
 class Grid:
-    lit_count = 0
-    history = []
+    lit = set()
+
+    @property
+    def lit_count(self):
+        return len(self.lit)
 
     def act(self, command):
-        if command in self.history:
-            return
-
-        history.append(command)
+        pos = re.search(r'.+(\d,\d).+', command).group(1)
 
         if 'toggle' in command:
-            self.lit_count = 1 if self.lit_count == 0 else 0
+            if pos in self.lit:
+                self.lit.remove(pos)
+            else:
+                self.lit.add(pos)
+
         if 'turn on' in command:
-            self.lit_count += 1
+            self.lit.add(pos)
+
         if 'turn off' in command:
-            self.lit_count -= 1 if not self.lit_count == 0 else 0
+            try:
+                self.lit.remove(pos)
+            except KeyError:
+                pass
