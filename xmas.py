@@ -10,10 +10,10 @@ class Grid:
         return len(self.lit)
 
     def act(self, command):
-        corner1, corner2 = re.search(r'.+(\d,\d) through (\d,\d)', command).groups()
+        x1, y1, x2, y2 = [int(i) for i in re.findall(r'\d+', command)]
 
         positions = [
-            f'0,{i}' for i in range(int(corner1[-1]), int(corner2[-1]) + 1)
+            f'{x},{y}' for x in range(x1, x2 + 1) for y in range(y1, y2 + 1)
         ]
         print(positions)
         for pos in positions:

@@ -41,3 +41,9 @@ def test_turn_on_line_longer_than_2():
     grid = Grid()
     grid.act("turn on 0,0 through 0,3")
     assert grid.lit_count == 4
+
+
+def test_turn_on_vertical_line():
+    grid = Grid()
+    grid.act("turn on 10,10 through 11,10")
+    assert grid.lit_count == 2
