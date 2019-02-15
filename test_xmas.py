@@ -16,6 +16,9 @@ def test_off_on_first_light():
     command = "turn off 0,0 through 0,0"
     grid.act(command)
     assert grid.lit_count == 0
+    grid.act("turn on 0,0 through 0,0")
+    grid.act("turn off 0,0 through 0,0")
+    assert grid.lit_count == 0
 
 def test_toggle_first_light():
     grid = Grid()
