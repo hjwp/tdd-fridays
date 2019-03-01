@@ -1,0 +1,2 @@
+def test_no_children_sums_metadata():
+    assert parse('0 3 4 5 6') == 4 + 5 + 6
