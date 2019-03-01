@@ -10,10 +10,17 @@ def test_no_children_sums_metadata():
 def test_one_child():
     assert parse('1 2 0 1 9 2 7') == 18
 
-@pytest.mark.xfail
+# @pytest.mark.xfail
 def test_two_child():
     assert parse('2 2 0 1 9 0 3 6 6 6 2 7') == 9 + 6+6+6 + 2+7
+
+def test_two_child():
+    assert parse_one([1, 0, 2, 2, 0 ,1 ,9 ,0 ,3 ,6 ,6 ,6 ,2 ,7]) == (9 + 6+6+6 + 2+7, [])
 
 def test_parse_one_for_no_children():
     assert parse_one([0, 3, 4, 5, 6, 7, 8, 9]) == (4 + 5 + 6, [7, 8, 9])
     assert parse_one([0, 3, 5, 6, 7, 8, 9, 10]) == (5 + 6 + 7, [8, 9, 10])
+
+def test_parse_one_for_one_children():
+    assert parse_one([1, 3, 0, 2, 1, 1, 4, 5, 6, 7, 8, 9]) == (1 + 1 + 4 + 5 + 6, [7, 8, 9])
+ 
