@@ -9,4 +9,4 @@ def test_one_child():
     assert parse('1 2 0 1 9 2 7') == 18
 
 def test_two_child():
-    assert parse('2 2 0 1 9 0 3 6 6 6 2 7') == 9 + 6 + 6 + 6 + 2 + 7
+    assert parse('2 2 0 1 9 0 3 6 6 6 2 7') == 9 + 6+6+6 + 2+7
