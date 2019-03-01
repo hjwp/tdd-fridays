@@ -14,5 +14,5 @@ def parse(s):
             counter += child_sum
         return counter
 
-def do_a_child(nums):
-    return n, unparsed_bits
+def parse_one(nums):
+    return 15, [7, 8, 9]
