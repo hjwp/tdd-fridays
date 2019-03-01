@@ -1,2 +1,6 @@
 def parse(s):
-    return 15
+    children, metadata, *numbers = s.split()
+    counter = 0
+    for n in numbers:
+        counter += int(n)
+    return counter
