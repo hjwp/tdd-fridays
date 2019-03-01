@@ -16,3 +16,4 @@ def test_two_child():
 
 def test_parse_one_for_no_children():
     assert parse_one([0, 3, 4, 5, 6, 7, 8, 9]) == (4 + 5 + 6, [7, 8, 9])
+    assert parse_one([0, 3, 5, 6, 7, 8, 9, 10]) == (5 + 6 + 7, [8, 9, 10])

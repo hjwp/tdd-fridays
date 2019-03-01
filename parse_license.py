@@ -15,4 +15,5 @@ def parse(s):
         return counter
 
 def parse_one(nums):
-    return 15, [7, 8, 9]
+    num_children, num_metadata, *body = nums
+    return sum(body[:num_metadata]), body[num_metadata:]
