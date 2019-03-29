@@ -60,4 +60,3 @@ def test_buy_1_get_1_free_cushion():
     cart.scan(product)
 
     assert cart.total_price() == 25
-

@@ -17,7 +17,7 @@ class ShoppingCart:
         total_price += c['Sofa'] * 500
 
         return total_price
-    
+
     def _bulk_discounts(self, c, item):
         bulk_discount = 0
 
@@ -25,10 +25,9 @@ class ShoppingCart:
             bulk_discount = c[item] * 90
         elif c[item]:
             bulk_discount = c[item] * 100
-        
+
         return bulk_discount
 
     def _buy_one_get_one_free(self, c, item):
         q, r = divmod(c[item], 2)
         return (q + r) * 25
-
