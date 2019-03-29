@@ -16,20 +16,16 @@ class ShoppingCart:
     def scan(self, product):
         self.products.append(product)
 
-    def price_after_discounts(self):
+    def total_price(self):
         total_price = 0
         c = Counter(self.products)
 
         total_price += self._bulk_discounts(c)
-
-        q, r = divmod(c['Cushion'], 2)
-        total_price += (q + r) * 25
-
+        total_price += self._buy_one_get_one_free(c)
         total_price += c['Sofa'] * 500
 
         return total_price
     
-
     def _bulk_discounts(self, c):
         bulk_discount = 0
 
@@ -40,7 +36,8 @@ class ShoppingCart:
         
         return bulk_discount
 
-    @property
-    def total_price(self):
-        return self.price_after_discounts()
+    def _buy_one_get_one_free(self, c):
+        q, r = divmod(c['Cushion'], 2)
+        return (q + r) * 25
+
 
