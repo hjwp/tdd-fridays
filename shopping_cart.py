@@ -1,13 +1,5 @@
 from collections import Counter
 
-class BulkDiscount:
-
-    def __init__(self, products):
-        self.products = products
-    
-    def discounted_price(self):
-        pass
-
 
 class ShoppingCart:
     def __init__(self):
@@ -39,5 +31,4 @@ class ShoppingCart:
     def _buy_one_get_one_free(self, c, item):
         q, r = divmod(c[item], 2)
         return (q + r) * 25
-
 

@@ -2,6 +2,7 @@ import pytest
 
 from shopping_cart import ShoppingCart
 
+
 @pytest.mark.parametrize("product,expected_price", [
     ('Chair', 100),
     ('Sofa', 500),
@@ -12,6 +13,7 @@ def test_calculate_total_price_for_single_product_in_cart(product, expected_pric
     cart = ShoppingCart()
     cart.scan(product)
     assert cart.total_price() == expected_price
+
 
 def test_add_multiple_products_to_cart():
     cart = ShoppingCart()
@@ -26,6 +28,7 @@ def test_add_multiple_products_to_cart():
 
     assert cart.total_price() == 625
 
+
 def test_no_bulk_discount():
     cart = ShoppingCart()
 
@@ -34,6 +37,7 @@ def test_no_bulk_discount():
     cart.scan(product)
 
     assert cart.total_price() == 200
+
 
 def test_bulk_discount():
     cart = ShoppingCart()
@@ -56,3 +60,4 @@ def test_buy_1_get_1_free_cushion():
     cart.scan(product)
 
     assert cart.total_price() == 25
+
